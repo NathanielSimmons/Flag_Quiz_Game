@@ -34,4 +34,21 @@ const flags=[
         correctAnswer: 'Anguilla',
         wrongAnswer: ['Cayman Islands', 'British Virgin Islands']
     },
-]
+];
+
+let currentFlagIndex= 0;
+let score= 0;
+let shuffledFlags= [...flags];
+
+function shuffleArray(array){
+    for(let i=array.length -1; i>0;i--){
+    const j= Math.floor(Math.random()* (i+1));
+    [array[i], array[j]]= [array[j], array[i]];
+    }
+    return array
+}
+
+function shuffledFlags(){
+    shuffledFlags= [...flags];
+    shuffleArray(shuffledFlags);
+}
