@@ -48,7 +48,7 @@ function shuffleArray(array){
     return array
 }
 
-function shuffledFlags(){
+function shuffleFlags(){
     shuffledFlags= [...flags];
     shuffleArray(shuffledFlags);
 }
@@ -105,10 +105,10 @@ function startGame(){
     document.getElementById('score').textContent='Score: 0';
     document.getElementById('hint').textContent='';
     document.getElementById('flag').style.display='block';
-    document.getElementById('options').style.display='bloack';
+    document.getElementById('options').style.display='block';
     document.getElementById('play-again').style.display='none';
 
-    shuffledFlags();
+    shuffleFlags();
     loadFlag();
 }
 
@@ -121,3 +121,17 @@ function endGame(){
     document.getElementById('options').style.display='none';
     document.getElementById('play-again').style.display='block';
 }
+
+function playAgain(){
+    currentFlagIndex= 0;
+    score= 0;
+    document.getElementById('score').textContent= 'Score: 0';
+    document.getElementById('hint').textContent='';
+    document.getElementById('flag').style.display='block';
+    document.getElementById('options').style.display='block';
+    document.getElementById('play-again').style.display='none';
+
+    shuffleFlags();
+    loadFlag();
+}
+
