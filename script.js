@@ -4,35 +4,35 @@ const flags=[
         capital: 'Andorra la Vella',
         continent: 'Europe',
         correctAnswer: 'Andorra',
-        wrongAnswer: ['Albania', 'Romania']
+        wrongAnswers: ['Albania', 'Romania']
     },
     {
         flagPath: 'Flags/ae.png',
         capital: 'Abu Dhabi',
         continent: 'Asia',
         correctAnswer: 'United Arab Emirates',
-        wrongAnswer: ['Oman', 'Saudi Arabia']
+        wrongAnswers: ['Oman', 'Saudi Arabia']
     },
     {
         flagPath: 'Flags/af.png',
         capital: 'Kabul',
         continent: 'Asia',
         correctAnswer: 'Afghanistan',
-        wrongAnswer: ['Turkmenistan', 'Pakistan']
+        wrongAnswers: ['Turkmenistan', 'Pakistan']
     },
     {
         flagPath: 'Flags/ag.png',
         capital: 'St. Johns',
         continent: 'North America',
         correctAnswer: 'Antigua & Barbuda',
-        wrongAnswer: ['Guyana', 'Barbados']
+        wrongAnswers: ['Guyana', 'Barbados']
     },
     {
         flagPath: 'Flags/ai.png',
         capital: 'The Valley',
         continent: 'North America',
         correctAnswer: 'Anguilla',
-        wrongAnswer: ['Cayman Islands', 'British Virgin Islands']
+        wrongAnswers: ['Cayman Islands', 'British Virgin Islands']
     },
 ];
 
@@ -42,10 +42,10 @@ let shuffledFlags= [...flags];
 
 function shuffleArray(array){
     for(let i=array.length -1; i>0;i--){
-    const j= Math.floor(Math.random()* (i+1));
+    const j= Math.floor(Math.random() * (i+1));
     [array[i], array[j]]= [array[j], array[i]];
     }
-    return array
+    return array;
 }
 
 function shuffleFlags(){
@@ -59,11 +59,11 @@ function updateTotalFlags(){
 }
 
 function loadFlag(){
-    if (currentFlag< shuffledFlags.length){
-        const flag = shuffleArray[currentFlagIndex];
+    if (currentFlagIndex< shuffledFlags.length){
+        const flag = shuffledFlags[currentFlagIndex];
         document.getElementById('flag').src= flag.flagPath;
         document.getElementById('hint').innerHTML= `<strong>Capital:</strong> ${flag.capital}, <strong>Continent:</strong> ${flag.continent} `;
-        const options= shuffleArray([flag.correctAnswer, ...flag.wrongAnswer]); options.forEach((option, index) => {
+        const options= shuffleArray([flag.correctAnswer, ...flag.wrongAnswers]); options.forEach((option, index) => {
             document.getElementsByClassName('option')[index].textContent= option;
 
             
@@ -76,9 +76,9 @@ function loadFlag(){
 }
 
 function checkAnswer(button){
-    const selectedAnswer= button.textContent
+    const selectedAnswer= button.textContent;
     const flag = shuffledFlags[currentFlagIndex];
-    const hintElement= document.getElementById('hint')
+    const hintElement= document.getElementById('hint');
 
     if( selectedAnswer === flag.correctAnswer){
         score++;
@@ -141,4 +141,4 @@ window.onload= function(){
 }
 
 document.getElementById('play-agian').style.display='none';
-loadFlag()
+loadFlag();
