@@ -52,3 +52,17 @@ function shuffledFlags(){
     shuffledFlags= [...flags];
     shuffleArray(shuffledFlags);
 }
+
+function updateTotalFlags(){
+    const totalFlags= flags.length;
+    document.getElementById('total-flags').textContent= `Flag: ${currentFlagIndex + 1} / ${totalFlags}`;
+}
+
+function loadFlag(){
+    if (currentFlag< shuffledFlags.length){
+        const flag = shuffleArray[currentFlagIndex];
+        document.getElementById('flag').src= flag.flagPath;
+        document.getElementById('hint').innerHTML= `<strong>Capital:</strong> ${flag.capital}, <strong>Continent:</strong> ${flag.continent} `;
+        
+    }
+}
