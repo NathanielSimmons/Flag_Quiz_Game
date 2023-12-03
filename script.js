@@ -63,6 +63,35 @@ function loadFlag(){
         const flag = shuffleArray[currentFlagIndex];
         document.getElementById('flag').src= flag.flagPath;
         document.getElementById('hint').innerHTML= `<strong>Capital:</strong> ${flag.capital}, <strong>Continent:</strong> ${flag.continent} `;
-        
+        const options= shuffleArray([flag.correctAnswer, ...flag.wrongAnswer]); options.forEach((option, index) => {
+            document.getElementsByClassName('option')[index].textContent= option;
+
+            
+        });
+
+    updateTotalFlags();
+    } else{
+        endGame();
     }
+}
+
+function checkAnswer(button){
+    const selectedAnswer= button.textContent
+    const flag = shuffledFlags[currentFlagIndex];
+    const hintElement= document.getElementById('hint')
+
+    if( selectedAnswer === flag.correctAnswer){
+        score++;
+        hintElement.textContent='Correct!';
+        hintElement.style.color='green';
+    } else{
+        hintElement.textContent=`Answer: ${flag.correctAnswer}`;
+        hintElement.style.color= 'red';
+    }
+    currentFlagIndex++
+    const totalFlags= flag.length;
+    document.getElementById('score').textContent=`Score: ${score} / ${totalFlags}`;
+
+    setTimeout
+
 }
