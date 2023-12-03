@@ -92,6 +92,23 @@ function checkAnswer(button){
     const totalFlags= flag.length;
     document.getElementById('score').textContent=`Score: ${score} / ${totalFlags}`;
 
-    setTimeout
-
+    setTimeout(()=>{
+        hintElement.textContent='';
+        hintElement.style.color='';
+        loadFlag();
+    }, 1600);
 }
+
+function startGame(){
+    currentFlagIndex=0;
+    score=0;
+    document.getElementById('score').textContent='Score: 0';
+    document.getElementById('hint').textContent='';
+    document.getElementById('flag').style.display='block';
+    document.getElementById('options').style.display='bloack';
+    document.getElementById('play-again').style.display='none';
+
+    shuffledFlags();
+    loadFlag();
+}
+
