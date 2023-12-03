@@ -1,5 +1,5 @@
 *{
-    margin: auto;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -43,21 +43,22 @@ body{
 }
 
 #flag{
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
     max-width: 300px;
     max-height: auto;
-    border: 1px solid red;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     margin: 10px 0;
 }
 
 #hint{
-    font-size: 10px;
+    font-size: 16px;
     margin: 10px;
 }
 
 #score{
-    font-size: 10px;
+    font-size: 18px;
     font-weight: bold;
     margin: 10px 32%;
     color: white;
@@ -80,10 +81,10 @@ body{
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
-.option.hover{
+.option:hover{
     transform: scale(0.9);
     background-color: red;
 }
@@ -95,7 +96,7 @@ body{
     background-color: transparent;
     display: block;
     margin: 0 auto;
-    transition: 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 #play-again{

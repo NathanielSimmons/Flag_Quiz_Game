@@ -1,34 +1,34 @@
 const flags=[
     {
-        flagPath: 'flags/ad.png',
+        flagPath: 'Flags/ad.png',
         capital: 'Andorra la Vella',
         continent: 'Europe',
         correctAnswer: 'Andorra',
         wrongAnswer: ['Albania', 'Romania']
     },
     {
-        flagPath: 'flags/ae.png',
+        flagPath: 'Flags/ae.png',
         capital: 'Abu Dhabi',
         continent: 'Asia',
         correctAnswer: 'United Arab Emirates',
         wrongAnswer: ['Oman', 'Saudi Arabia']
     },
     {
-        flagPath: 'flags/af.png',
+        flagPath: 'Flags/af.png',
         capital: 'Kabul',
         continent: 'Asia',
         correctAnswer: 'Afghanistan',
         wrongAnswer: ['Turkmenistan', 'Pakistan']
     },
     {
-        flagPath: 'flags/ag.png',
+        flagPath: 'Flags/ag.png',
         capital: 'St. Johns',
         continent: 'North America',
         correctAnswer: 'Antigua & Barbuda',
         wrongAnswer: ['Guyana', 'Barbados']
     },
     {
-        flagPath: 'flags/ai.png',
+        flagPath: 'Flags/ai.png',
         capital: 'The Valley',
         continent: 'North America',
         correctAnswer: 'Anguilla',
@@ -89,7 +89,7 @@ function checkAnswer(button){
         hintElement.style.color= 'red';
     }
     currentFlagIndex++
-    const totalFlags= flag.length;
+    const totalFlags= flags.length;
     document.getElementById('score').textContent=`Score: ${score} / ${totalFlags}`;
 
     setTimeout(()=>{
@@ -135,3 +135,10 @@ function playAgain(){
     loadFlag();
 }
 
+window.onload= function(){
+    updateTotalFlags();
+    startGame();
+}
+
+document.getElementById('play-agian').style.display='none';
+loadFlag()
