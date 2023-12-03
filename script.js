@@ -112,3 +112,12 @@ function startGame(){
     loadFlag();
 }
 
+function endGame(){
+    const totalFlags= flags.length
+    const scoreText= `Score: ${score} / ${totalFlags}`;
+    document.getElementById('hint').textContent='Game Over!';
+    document.getElementById('score').textContent= scoreText;
+    document.getElementById('flag').style.display='none';
+    document.getElementById('options').style.display='none';
+    document.getElementById('play-again').style.display='block';
+}
