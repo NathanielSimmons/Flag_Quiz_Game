@@ -143,7 +143,7 @@ const flags=[
 
 let currentFlagIndex= 0;
 let score= 0;
-let shuffledFlags= [...flags];
+let shuffledFlags = [...flags];
 
 function shuffleArray(array){
     for(let i=array.length -1; i>0;i--){
@@ -166,6 +166,7 @@ function updateTotalFlags(){
 function loadFlag(){
     if (currentFlagIndex< shuffledFlags.length){
         const flag = shuffledFlags[currentFlagIndex];
+        console.log('flag: ', flag)
         document.getElementById('flag').src= flag.flagPath;
         document.getElementById('hint').innerHTML= `<strong>Capital:</strong> ${flag.capital}, <strong>Continent:</strong> ${flag.continent} `;
         const options= shuffleArray([flag.correctAnswer, ...flag.wrongAnswers]); options.forEach((option, index) => {
@@ -205,12 +206,12 @@ function checkAnswer(button){
 }
 
 function startGame(){
-    currentFlagIndex=0;
+    currentFlagIndex= 0;
     score=0;
     document.getElementById('score').textContent='Score: 0';
     document.getElementById('hint').textContent='';
     document.getElementById('flag').style.display='block';
-    document.getElementById('options').style.display='block';
+    document.querySelector('.button_container').style.display='block';
     document.getElementById('play-again').style.display='none';
 
     shuffleFlags();
@@ -223,7 +224,7 @@ function endGame(){
     document.getElementById('hint').textContent='Game Over!';
     document.getElementById('score').textContent= scoreText;
     document.getElementById('flag').style.display='none';
-    document.getElementById('options').style.display='none';
+    document.querySelector('.button_container').style.display='none';
     document.getElementById('play-again').style.display='block';
 }
 
@@ -233,7 +234,7 @@ function playAgain(){
     document.getElementById('score').textContent= 'Score: 0';
     document.getElementById('hint').textContent='';
     document.getElementById('flag').style.display='block';
-    document.getElementById('options').style.display='block';
+    document.querySelector('.button_container').style.display='block';
     document.getElementById('play-again').style.display='none';
 
     shuffleFlags();
@@ -245,5 +246,5 @@ window.onload= function(){
     startGame();
 }
 
-document.getElementById('play-agian').style.display='none';
+document.getElementById('play-again').style.display='none';
 loadFlag();

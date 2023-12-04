@@ -101,7 +101,6 @@ body{
 
 #play-again{
     transform: scale(1.2);
-    background-color: red;
 }
 
 .message.correct{
@@ -112,4 +111,16 @@ body{
 .message.wrong{
     color: red;
     font-weight: bold;
+}
+
+.flag-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
