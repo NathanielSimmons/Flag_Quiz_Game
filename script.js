@@ -63,11 +63,25 @@ const flags=[
         wrongAnswers: ['Hungary', 'Slovenia']
     },
     {
-        flagPath: 'Flags/ae.png',
-        capital: 'Abu Dhabi',
+        flagPath: 'Flags/gb-sct.png',
+        capital: 'Edinburgh',
+        continent: 'Europe',
+        correctAnswer: 'Scotland',
+        wrongAnswers: ['Norway', 'Sweden']
+    },
+    {
+        flagPath: 'Flags/bh.png',
+        capital: 'Manama',
         continent: 'Asia',
-        correctAnswer: 'United Arab Emirates',
-        wrongAnswers: ['Oman', 'Saudi Arabia']
+        correctAnswer: 'Bahrain',
+        wrongAnswers: ['Yemen', 'Jordan']
+    },
+    {
+        flagPath: 'Flags/tt.png',
+        capital: 'Port of Spain',
+        continent: 'South America',
+        correctAnswer: 'Trinidad and Tobago',
+        wrongAnswers: ['French Guiana', 'Suriname']
     },
     {
         flagPath: 'Flags/pt.png',
