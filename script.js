@@ -42,11 +42,25 @@ const flags=[
         wrongAnswers: ['Bolivia', 'Paraguay']
     },
     {
-        flagPath: 'Flags/ae.png',
-        capital: 'Abu Dhabi',
-        continent: 'Asia',
-        correctAnswer: 'United Arab Emirates',
-        wrongAnswers: ['Oman', 'Saudi Arabia']
+        flagPath: 'Flags/uy.png',
+        capital: 'Montevideo',
+        continent: 'South America',
+        correctAnswer: 'Uruguay',
+        wrongAnswers: ['Peru', 'Ecuador']
+    },
+    {
+        flagPath: 'Flags/mg.png',
+        capital: 'Antananarivo',
+        continent: 'Africa',
+        correctAnswer: 'Madagascar',
+        wrongAnswers: ['Angola', 'Botswana']
+    },
+    {
+        flagPath: 'Flags/rs.png',
+        capital: 'Belgrade',
+        continent: 'Europe',
+        correctAnswer: 'Serbia',
+        wrongAnswers: ['Hungary', 'Slovenia']
     },
     {
         flagPath: 'Flags/ae.png',
@@ -56,53 +70,39 @@ const flags=[
         wrongAnswers: ['Oman', 'Saudi Arabia']
     },
     {
-        flagPath: 'Flags/ae.png',
-        capital: 'Abu Dhabi',
-        continent: 'Asia',
-        correctAnswer: 'United Arab Emirates',
-        wrongAnswers: ['Oman', 'Saudi Arabia']
+        flagPath: 'Flags/pt.png',
+        capital: 'Lisbon',
+        continent: 'Europe',
+        correctAnswer: 'Portugal',
+        wrongAnswers: ['Malta', 'Italy']
     },
     {
-        flagPath: 'Flags/ae.png',
-        capital: 'Abu Dhabi',
-        continent: 'Asia',
-        correctAnswer: 'United Arab Emirates',
-        wrongAnswers: ['Oman', 'Saudi Arabia']
+        flagPath: 'Flags/cg.png',
+        capital: 'Brazzaville',
+        continent: 'Africa',
+        correctAnswer: 'Republic of the Congo',
+        wrongAnswers: ['Gabon', 'Cameroon']
     },
     {
-        flagPath: 'Flags/ae.png',
-        capital: 'Abu Dhabi',
-        continent: 'Asia',
-        correctAnswer: 'United Arab Emirates',
-        wrongAnswers: ['Oman', 'Saudi Arabia']
+        flagPath: 'Flags/et.png',
+        capital: 'Addis Ababa',
+        continent: 'Africa',
+        correctAnswer: 'Ethiopia',
+        wrongAnswers: ['Mali', 'Sudan']
     },
     {
-        flagPath: 'Flags/ae.png',
-        capital: 'Abu Dhabi',
-        continent: 'Asia',
-        correctAnswer: 'United Arab Emirates',
-        wrongAnswers: ['Oman', 'Saudi Arabia']
+        flagPath: 'Flags/sv.png',
+        capital: 'San Salvador',
+        continent: 'North America',
+        correctAnswer: 'El Salvador',
+        wrongAnswers: ['Guatemala', 'Honduras']
     },
     {
-        flagPath: 'Flags/ae.png',
-        capital: 'Abu Dhabi',
-        continent: 'Asia',
-        correctAnswer: 'United Arab Emirates',
-        wrongAnswers: ['Oman', 'Saudi Arabia']
-    },
-    {
-        flagPath: 'Flags/ae.png',
-        capital: 'Abu Dhabi',
-        continent: 'Asia',
-        correctAnswer: 'United Arab Emirates',
-        wrongAnswers: ['Oman', 'Saudi Arabia']
-    },
-    {
-        flagPath: 'Flags/ae.png',
-        capital: 'Abu Dhabi',
-        continent: 'Asia',
-        correctAnswer: 'United Arab Emirates',
-        wrongAnswers: ['Oman', 'Saudi Arabia']
+        flagPath: 'Flags/cv.png',
+        capital: 'Praia',
+        continent: 'Africa',
+        correctAnswer: 'Cape Verde',
+        wrongAnswers: ['Ivory Coast', 'Kenya']
     },
     {
         flagPath: 'Flags/af.png',
