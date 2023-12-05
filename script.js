@@ -166,7 +166,6 @@ function updateTotalFlags(){
 function loadFlag(){
     if (currentFlagIndex< shuffledFlags.length){
         const flag = shuffledFlags[currentFlagIndex];
-        console.log('flag: ', flag)
         document.getElementById('flag').src= flag.flagPath;
         document.getElementById('hint').innerHTML= `<strong>Capital:</strong> ${flag.capital}, <strong>Continent:</strong> ${flag.continent} `;
         const options= shuffleArray([flag.correctAnswer, ...flag.wrongAnswers]); options.forEach((option, index) => {

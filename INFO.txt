@@ -1,13 +1,13 @@
 Give the background of the webapage a picture of the globe.
-Title the webpage and the header "Flag Quiz Game".
+Title the webpage and the header "Guess The Flag".
 Create a database where pictures of the flags will be stored.
 Create a database where correct answers and the associated mutiple choice set (3 options per questions) will be stored.
 Create a function that randomizes which flag and the corresponding multiple choice set will be shown.
 Towards the middle of the page, flash the flag that needs to be guessed.
 Give the player the multiple choice set to choose from.
-If the player clicks on the correct answer have that option's backgound flash green.
-If the player clicks on the wrong answer have that option's backgound flash red.
+Include a hint section that includes the country's continent & capital.
+If the player clicks on the correct answer display 'Correct!' in the hint div.
+If the player clicks on the wrong answer have the correct answer displayed.
 Include a tracker that shows the player's score.
-After answering 10 questions end the game and show the player his/her final score.
+After answering 20 questions end the game and show the player's final score.
 Include a restart button that allows the player to play again.
-Make the game userphase is compatible with different size sccreens (computer, tablet and smartphone).
