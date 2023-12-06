@@ -1,139 +1,139 @@
 const flags=[
     {
-        flagPath: 'Flags/ad.png',
+        flagLink: 'Flags/ad.png',
         capital: 'Andorra la Vella',
         continent: 'Europe',
         correctAnswer: 'Andorra',
         wrongAnswers: ['Albania', 'Romania']
     },
     {
-        flagPath: 'Flags/ae.png',
+        flagLink: 'Flags/ae.png',
         capital: 'Abu Dhabi',
         continent: 'Asia',
         correctAnswer: 'United Arab Emirates',
         wrongAnswers: ['Oman', 'Saudi Arabia']
     },
     {
-        flagPath: 'Flags/ba.png',
+        flagLink: 'Flags/ba.png',
         capital: 'Sarajevo',
         continent: 'Europe',
         correctAnswer: 'Bosnia and Herzegovina',
         wrongAnswers: ['Montenegro', 'Croatia']
     },
     {
-        flagPath: 'Flags/uz.png',
+        flagLink: 'Flags/uz.png',
         capital: 'Tashkent',
         continent: 'Asia',
         correctAnswer: 'Uzbekistan',
         wrongAnswers: ['Kyrgyzstan', 'Kazakhstan']
     },
     {
-        flagPath: 'Flags/vc.png',
+        flagLink: 'Flags/vc.png',
         capital: 'Kingstown',
         continent: 'North America',
         correctAnswer: 'Saint Vincent',
         wrongAnswers: ['Saint Lucia', 'Barbados']
     },
     {
-        flagPath: 'Flags/cl.png',
+        flagLink: 'Flags/cl.png',
         capital: 'Santiago',
         continent: 'South America',
         correctAnswer: 'Chile',
         wrongAnswers: ['Bolivia', 'Paraguay']
     },
     {
-        flagPath: 'Flags/uy.png',
+        flagLink: 'Flags/uy.png',
         capital: 'Montevideo',
         continent: 'South America',
         correctAnswer: 'Uruguay',
         wrongAnswers: ['Peru', 'Ecuador']
     },
     {
-        flagPath: 'Flags/mg.png',
+        flagLink: 'Flags/mg.png',
         capital: 'Antananarivo',
         continent: 'Africa',
         correctAnswer: 'Madagascar',
         wrongAnswers: ['Angola', 'Botswana']
     },
     {
-        flagPath: 'Flags/rs.png',
+        flagLink: 'Flags/rs.png',
         capital: 'Belgrade',
         continent: 'Europe',
         correctAnswer: 'Serbia',
         wrongAnswers: ['Hungary', 'Slovenia']
     },
     {
-        flagPath: 'Flags/gb-sct.png',
+        flagLink: 'Flags/gb-sct.png',
         capital: 'Edinburgh',
         continent: 'Europe',
         correctAnswer: 'Scotland',
         wrongAnswers: ['Norway', 'Sweden']
     },
     {
-        flagPath: 'Flags/bh.png',
+        flagLink: 'Flags/bh.png',
         capital: 'Manama',
         continent: 'Asia',
         correctAnswer: 'Bahrain',
         wrongAnswers: ['Yemen', 'Jordan']
     },
     {
-        flagPath: 'Flags/tt.png',
+        flagLink: 'Flags/tt.png',
         capital: 'Port of Spain',
         continent: 'South America',
         correctAnswer: 'Trinidad and Tobago',
         wrongAnswers: ['French Guiana', 'Suriname']
     },
     {
-        flagPath: 'Flags/pt.png',
+        flagLink: 'Flags/pt.png',
         capital: 'Lisbon',
         continent: 'Europe',
         correctAnswer: 'Portugal',
         wrongAnswers: ['Malta', 'Italy']
     },
     {
-        flagPath: 'Flags/cg.png',
+        flagLink: 'Flags/cg.png',
         capital: 'Brazzaville',
         continent: 'Africa',
         correctAnswer: 'Republic of the Congo',
         wrongAnswers: ['Gabon', 'Cameroon']
     },
     {
-        flagPath: 'Flags/et.png',
+        flagLink: 'Flags/et.png',
         capital: 'Addis Ababa',
         continent: 'Africa',
         correctAnswer: 'Ethiopia',
         wrongAnswers: ['Mali', 'Sudan']
     },
     {
-        flagPath: 'Flags/sv.png',
+        flagLink: 'Flags/sv.png',
         capital: 'San Salvador',
         continent: 'North America',
         correctAnswer: 'El Salvador',
         wrongAnswers: ['Guatemala', 'Honduras']
     },
     {
-        flagPath: 'Flags/cv.png',
+        flagLink: 'Flags/cv.png',
         capital: 'Praia',
         continent: 'Africa',
         correctAnswer: 'Cape Verde',
         wrongAnswers: ['Ivory Coast', 'Kenya']
     },
     {
-        flagPath: 'Flags/af.png',
+        flagLink: 'Flags/af.png',
         capital: 'Kabul',
         continent: 'Asia',
         correctAnswer: 'Afghanistan',
         wrongAnswers: ['Turkmenistan', 'Pakistan']
     },
     {
-        flagPath: 'Flags/ag.png',
+        flagLink: 'Flags/ag.png',
         capital: 'St. Johns',
         continent: 'North America',
         correctAnswer: 'Antigua & Barbuda',
         wrongAnswers: ['Guyana', 'Barbados']
     },
     {
-        flagPath: 'Flags/ai.png',
+        flagLink: 'Flags/ai.png',
         capital: 'The Valley',
         continent: 'North America',
         correctAnswer: 'Anguilla',
@@ -141,34 +141,35 @@ const flags=[
     },
 ];
 
-let currentFlagIndex= 0;
+let FlagIndex= 0;
 let score= 0;
-let shuffledFlags = [...flags];
+let mixedFlags = [...flags];
 
-function shuffleArray(array){
+// Fisher Yates Shuffle
+function mixArray(array){
     for(let i=array.length -1; i>0;i--){
-    const j= Math.floor(Math.random() * (i+1));
-    [array[i], array[j]]= [array[j], array[i]];
+    const x= Math.floor(Math.random() * (i+1));
+    [array[i], array[x]]= [array[x], array[i]];
     }
     return array;
 }
 
-function shuffleFlags(){
-    shuffledFlags= [...flags];
-    shuffleArray(shuffledFlags);
+function mixFlags(){
+    mixedFlags= [...flags];
+    mixArray(mixedFlags);
 }
 
 function updateTotalFlags(){
     const totalFlags= flags.length;
-    document.getElementById('total-flags').textContent= `Flag: ${currentFlagIndex + 1} / ${totalFlags}`;
+    document.getElementById('total-flags').textContent= `Flag: ${FlagIndex + 1} / ${totalFlags}`;
 }
 
 function loadFlag(){
-    if (currentFlagIndex< shuffledFlags.length){
-        const flag = shuffledFlags[currentFlagIndex];
-        document.getElementById('flag').src= flag.flagPath;
+    if (FlagIndex< mixedFlags.length){
+        const flag = mixedFlags[FlagIndex];
+        document.getElementById('flag').src= flag.flagLink;
         document.getElementById('hint').innerHTML= `<strong>Capital:</strong> ${flag.capital}, <strong>Continent:</strong> ${flag.continent} `;
-        const options= shuffleArray([flag.correctAnswer, ...flag.wrongAnswers]); options.forEach((option, index) => {
+        const options= mixArray([flag.correctAnswer, ...flag.wrongAnswers]); options.forEach((option, index) => {
             document.getElementsByClassName('option')[index].textContent= option;
 
             
@@ -182,7 +183,7 @@ function loadFlag(){
 
 function checkAnswer(button){
     const selectedAnswer= button.textContent;
-    const flag = shuffledFlags[currentFlagIndex];
+    const flag = mixedFlags[FlagIndex];
     const hintElement= document.getElementById('hint');
 
     if( selectedAnswer === flag.correctAnswer){
@@ -193,7 +194,7 @@ function checkAnswer(button){
         hintElement.textContent=`Answer: ${flag.correctAnswer}`;
         hintElement.style.color= 'red';
     }
-    currentFlagIndex++
+    FlagIndex++
     const totalFlags= flags.length;
     document.getElementById('score').textContent=`Score: ${score} / ${totalFlags}`;
 
@@ -205,7 +206,7 @@ function checkAnswer(button){
 }
 
 function startGame(){
-    currentFlagIndex= 0;
+    FlagIndex= 0;
     score=0;
     document.getElementById('score').textContent='Score: 0';
     document.getElementById('hint').textContent='';
@@ -213,7 +214,7 @@ function startGame(){
     document.querySelector('.button_container').style.display='block';
     document.getElementById('play-again').style.display='none';
 
-    shuffleFlags();
+    mixFlags();
     loadFlag();
 }
 
@@ -228,7 +229,7 @@ function endGame(){
 }
 
 function playAgain(){
-    currentFlagIndex= 0;
+    FlagIndex= 0;
     score= 0;
     document.getElementById('score').textContent= 'Score: 0';
     document.getElementById('hint').textContent='';
@@ -236,7 +237,7 @@ function playAgain(){
     document.querySelector('.button_container').style.display='block';
     document.getElementById('play-again').style.display='none';
 
-    shuffleFlags();
+    mixFlags();
     loadFlag();
 }
 

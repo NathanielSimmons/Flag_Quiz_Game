@@ -13,5 +13,5 @@ h1, p, button {
 
 p {
     word-wrap: break-word;
-    max-width: 600px; /* Optional: Set a maximum width for the instructions */
+    max-width: 600px;
 }
