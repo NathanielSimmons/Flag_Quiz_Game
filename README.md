@@ -1,4 +1,4 @@
-# Flag Quiz Game
+# Guess The Flag
 ### By: Nathaniel Simmons
 #### Date: 11/28/23
 
